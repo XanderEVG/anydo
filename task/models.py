@@ -48,17 +48,16 @@ class Task(models.Model):
     category = models.ForeignKey('category', blank=True, null=True)
     tags = models.ManyToManyField('tag', blank=True)	
     remind = models.DateTimeField(blank=True, null=True)		
-    read_permission = models.ManyToManyField('auth.User', blank=True, null=True, verbose_name='read_permission', related_name="read_permission")	
-    write_permission = models.ManyToManyField('auth.User', blank=True, null=True, verbose_name='write_permission', related_name="write_permission")		
+    read_permission = models.ManyToManyField('auth.User', blank=True, verbose_name='read_permission', related_name="read_permission")	
+    write_permission = models.ManyToManyField('auth.User', blank=True, verbose_name='write_permission', related_name="write_permission")		
     repeat_notification = models.CharField(max_length=3, choices=REPEATTYPE_CHOICES, default=NOREPEAT)						  
     repeat_task = models.CharField(max_length=3, choices=REPEATTYPE_CHOICES, default=NOREPEAT)	
     repeat_task_date = models.DateTimeField(blank=True, null=True)
     notification_task_date = models.DateTimeField(blank=True, null=True)
     
-    def __init__(self):      
-        self.title="asdf"
-        #self.save()
-        pass
+    def __init__(self, *args, **kwargs):
+        super(Task, self).__init__(*args, **kwargs)
+        # your code here
 
     def execute(self):
         #self.exec_date = timezone.now()

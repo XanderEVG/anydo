@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    {# viewport #}
+    {# favicon.ico #}
+    
+    {# media social #}
+    
+    {# Bootstrap CSS #}
+    {# BASE CSS #}
+    {# font-awesome CSS #}
+    {# other CSS #}
+    {% block section_css %}{% endblock %}
+    
+    
+    {# jquery JS #}
+    {# Bootstrap JS #}
+    {# BASE JS #}
+    {# font-awesome JS #}
+    {# other JS #}
+    {% block section_js %}{% endblock %}
+    
+    {# IE #}
+</head>
+
+<body>
+    <header>
+        {# logo #}
+        {# siteName #}
+        {# menu #}
+        {% block section_header %}{% endblock %}
+    </header>
+    
+    <div class='content-wrapper'>
+        {% block section_content_header %}{% endblock %}
+        <div class='content-page'>
+            {% block section_content %}{% endblock %}
+        </div>
+        {% block section_content_footer %}{% endblock %}
+    </div>
+    
+    <footer>
+        {# footer #}
+        {# copyright #}
+        {% block section_footer %}{% endblock %}
+    </footer>
+</body>
+
+</html>

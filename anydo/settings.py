@@ -25,8 +25,8 @@ SECRET_KEY = 'hgxs643!$lz1^(@ih80oqzr#gvqh1xv@#c)8nz1e)r94m#1^s4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['*']
+DEFAULT_FROM_EMAIL = 'XanderEVG@gmail.com'
 
 # Application definition
 
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'anydo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
